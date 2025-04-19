@@ -1,16 +1,18 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.5)
 
+set(CMAKE_POLICY_VERSION_MINIMUM 3.5)
 set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
 
 set(EXECUTABLE_NAME fallout-ce)
+set(CMAKE_OSX_SYSROOT "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk")
 
 if (APPLE)
     if(IOS)
-        set(CMAKE_OSX_DEPLOYMENT_TARGET "11" CACHE STRING "")
+        set(CMAKE_OSX_DEPLOYMENT_TARGET "12" CACHE STRING "")
         set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "")
     else()
-        set(CMAKE_OSX_DEPLOYMENT_TARGET "10.11" CACHE STRING "")
-        set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "")
+        set(CMAKE_OSX_DEPLOYMENT_TARGET "10.13" CACHE STRING "")
+        set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "")
     endif()
 endif()
 
